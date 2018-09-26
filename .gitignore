@@ -1,4 +1,4 @@
 # Ignore any directory named "node_modules".
 node_modules/
 .idea/
-src/assets/bower/*
+src/assets/bower/**/*
