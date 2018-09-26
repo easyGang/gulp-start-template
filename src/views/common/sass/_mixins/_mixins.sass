@@ -1,0 +1,35 @@
+@mixin square($size)
+  width: $size
+  height: $size
+
+@mixin justify-align
+  text-align: justify
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+
+@mixin absolute-center-x
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+
+@mixin absolute-center-y
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+@mixin absolute-center-all
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+@mixin vertical-center
+  &:after
+    display: inline-block
+    height: 100%
+    content: ''
+    vertical-align: middle
+
+

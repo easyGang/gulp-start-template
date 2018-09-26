@@ -1,0 +1,22 @@
+{
+  "name": "gulp-start-template",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "vusatui"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hammerjs": "hammer#^2.0.8",
+    "jquery": "^3.3.1"
+  }
+}
