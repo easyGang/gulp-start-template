@@ -97,15 +97,29 @@ gulp.task('js-components', function () {
         .pipe(gulp.dest('src/assets/scripts/common/'))
 })
 
+
+/*
+ * Обрабатываем Js в секциях
+ */
+
+gulp.task('js-sections', function () {
+  return gulp.src([
+    'src/views/sections/**/*.js'
+  ])
+    .pipe(concat('sections.js'))
+    .pipe(gulp.dest('src/assets/scripts/common/'))
+})
+
 /*
  * Обрабатываем весь Js
  */
 
-gulp.task('dev-js', ['js-libs', 'js-myLibs', 'js-components'], function () {
+gulp.task('dev-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], function () {
     return gulp.src([
         'src/assets/scripts/common/libs.js',
         'src/assets/scripts/common/myLibs.js',
-        'src/assets/scripts/common/components.js'
+        'src/assets/scripts/common/components.js',
+        'src/assets/scripts/common/scripts.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(babel({
@@ -116,11 +130,12 @@ gulp.task('dev-js', ['js-libs', 'js-myLibs', 'js-components'], function () {
         .pipe(browserSync.reload({ stream: true }))
 })
 
-gulp.task('dist-js', ['js-libs', 'js-myLibs', 'js-components'], function () {
+gulp.task('dist-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], function () {
     return gulp.src([
         'src/assets/scripts/common/libs.js',
         'src/assets/scripts/common/myLibs.js',
-        'src/assets/scripts/common/components.js'
+        'src/assets/scripts/common/components.js',
+        'src/assets/scripts/common/scripts.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(babel({
@@ -129,11 +144,12 @@ gulp.task('dist-js', ['js-libs', 'js-myLibs', 'js-components'], function () {
         .pipe(gulp.dest('dist/assets/scripts/common/'))
 })
 
-gulp.task('prod-js', ['js-libs', 'js-myLibs', 'js-components'], function () {
+gulp.task('prod-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], function () {
     return gulp.src([
         'src/assets/scripts/common/libs.js',
         'src/assets/scripts/common/myLibs.js',
-        'src/assets/scripts/common/components.js'
+        'src/assets/scripts/common/components.js',
+        'src/assets/scripts/common/scripts.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(babel({
