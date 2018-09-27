@@ -13,7 +13,7 @@ const gulp = require('gulp'),
       rsync = require('gulp-rsync'),
       pug = require('gulp-pug'),
       babel = require('gulp-babel'),
-      notify = require("gulp-notify"),
+      notify = require('gulp-notify'),
       cache = require('gulp-cache'),
       eslint = require('gulp-eslint'),
       minifyJS = require('gulp-minify')
@@ -46,7 +46,7 @@ gulp.task('browser-sync', function () {
     browserSync({
         server: {
             baseDir: 'src/',
-            index: "page-home.html"
+            index: 'page-home.html'
         },
         notify: false
     })
