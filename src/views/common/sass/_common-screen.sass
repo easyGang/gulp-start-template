@@ -1,2 +1,50 @@
 @import "default/common-style"
 @import "../../sections/sass/common-screen"
+
+
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+  color: #000
+
+*:-moz-placeholder
+  color: #000
+
+*::-moz-placeholder
+  color: #000
+
+*:-ms-input-placeholder
+  color: #000
+
+input:focus:required:invalid,
+textarea:focus:required:invalid
+  color: #000
+
+input:required:valid,
+textarea:required:valid
+  color: #000
+
+html
+  font-size: 16px
+  +proxima-nova-regular
+  background-color: $colorMainBg
+  min-width: 300px
+// TODO Сделать проверку на USERAGENT и привести в соответсвие для телефона. Т.е. тегу html убераем overflow: hidden!!!
+//overflow: hidden
+
+
+html, body
+  height: 100%
+
+body
+  position: relative
+  font-size: 1rem
+  color: #000
