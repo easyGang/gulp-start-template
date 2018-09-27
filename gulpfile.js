@@ -345,6 +345,8 @@ gulp.task('dist-build', ['removedist', 'dist-imagemin', 'dist-sass', 'dist-js'],
     var buildFiles = gulp.src([
         'src/*.html',
         'src/*.php',
+        'src/*.xml',
+        'src/*.txt',
         'src/*.json',
         'src/.htaccess'
     ]).pipe(gulp.dest('dist'))
@@ -376,6 +378,8 @@ gulp.task('prod-build', ['removeprod', 'prod-imagemin', 'prod-sass', 'prod-js'],
     var buildFiles = gulp.src([
         'src/*.html',
         'src/*.php',
+        'src/*.xml',
+        'src/*.txt',
         'src/*.json',
         'src/.htaccess'
     ]).pipe(gulp.dest('prod'))
