@@ -119,7 +119,7 @@ gulp.task('dev-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], fu
         'src/assets/scripts/common/libs.js',
         'src/assets/scripts/common/myLibs.js',
         'src/assets/scripts/common/components.js',
-        'src/assets/scripts/common/scripts.js'
+        'src/assets/scripts/common/sections.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(babel({
@@ -135,7 +135,7 @@ gulp.task('dist-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], f
         'src/assets/scripts/common/libs.js',
         'src/assets/scripts/common/myLibs.js',
         'src/assets/scripts/common/components.js',
-        'src/assets/scripts/common/scripts.js'
+        'src/assets/scripts/common/sections.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(babel({
@@ -149,7 +149,7 @@ gulp.task('prod-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], f
         'src/assets/scripts/common/libs.js',
         'src/assets/scripts/common/myLibs.js',
         'src/assets/scripts/common/components.js',
-        'src/assets/scripts/common/scripts.js'
+        'src/assets/scripts/common/sections.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(babel({
