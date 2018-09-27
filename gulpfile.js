@@ -324,7 +324,7 @@ gulp.task('dev-watch', ['dev-sass', 'pug', 'dev-js', 'css-libs', 'browser-sync']
     gulp.watch('src/*.html', browserSync.reload)
 })
 
-gulp.task('dev-watch-php', ['dev-sass', 'pug-php', 'dev-js', 'css-libs', 'browser-sync'], function () {
+gulp.task('dev-watch-php', ['dev-sass', 'pug-php', 'dev-js', 'css-libs', 'browser-sync-php'], function () {
     gulp.watch(['src/assets/sass/**/*.+(scss|sass)', 'src/views/**/*.+(scss|sass)'], ['dev-sass'])
     gulp.watch(['src/views/**/*.+(pug|jade)'], ['pug'])
     gulp.watch(['src/assets/scripts/libs/**/*.js', 'src/assets/scripts/myLibs/**/*.js', 'src/views/**/*.js'], ['dev-js'])
