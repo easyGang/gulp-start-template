@@ -362,13 +362,16 @@ gulp.task('dist-build', ['removedist', 'dist-imagemin', 'dist-sass', 'dist-js'],
     var buildPhp = gulp.src([
         'src/assets/php/**/*'
     ]).pipe(gulp.dest('dist/assets/php/'))
+
+    var buildVendor = gulp.src([
+      'src/vendor/**/*'
+    ]).pipe(gulp.dest('dist/'))
 })
 /*
  * Создаем папку prod - окончательная версия проекта
  */
 
-gulp.task('prod-build', ['removeprod', 'prod-imagemin', 'prod-sass', 'prod-js'], function() {
-
+gulp.task('prod-build', ['removeprod', 'prod-imagemin', 'prod-sass', 'prod-js'], function () {
     var buildFiles = gulp.src([
         'src/*.html',
         'src/*.php',
@@ -389,6 +392,10 @@ gulp.task('prod-build', ['removeprod', 'prod-imagemin', 'prod-sass', 'prod-js'],
     var buildPhp = gulp.src([
         'src/assets/php/**/*'
     ]).pipe(gulp.dest('prod/assets/php/'))
+
+    var buildVendor = gulp.src([
+        'src/vendor/**/*'
+    ]).pipe(gulp.dest('dist/'))
 })
 
 // removes
