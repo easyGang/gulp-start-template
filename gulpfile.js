@@ -366,7 +366,7 @@ gulp.task('dist-build', ['removedist', 'dist-imagemin', 'dist-sass', 'dist-js'],
 
     var buildVendor = gulp.src([
       'src/vendor/**/*'
-    ]).pipe(gulp.dest('dist/'))
+    ]).pipe(gulp.dest('dist/vendor/'))
 })
 /*
  * Создаем папку prod - окончательная версия проекта
@@ -397,7 +397,7 @@ gulp.task('prod-build', ['removeprod', 'prod-imagemin', 'prod-sass', 'prod-js'],
 
     var buildVendor = gulp.src([
         'src/vendor/**/*'
-    ]).pipe(gulp.dest('dist/'))
+    ]).pipe(gulp.dest('dist/vendor/'))
 })
 
 // removes
