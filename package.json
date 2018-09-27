@@ -1,7 +1,7 @@
 {
   "name": "gulp-start-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Get the fast start with 'gulp-start-template' ",
   "main": "index.js",
   "scripts": {
     "dev": "gulp dev-watch",
@@ -14,8 +14,8 @@
     "cache": "gulp clearcache",
     "components": "gulp components-export"
   },
-  "author": "vusatui",
-  "license": "ISC",
+  "author": "Anton Vusatui - https://github.com/easyGang",
+  "license": "MIT",
   "devDependencies": {
     "async": "^2.6.1",
     "babel-core": "^6.26.3",
