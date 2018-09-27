@@ -1,6 +1,6 @@
 {
   "name": "gulp-start-template",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Get the fast start with 'gulp-start-template' ",
   "main": "index.js",
   "scripts": {
