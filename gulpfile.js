@@ -1,4 +1,6 @@
 // ---- Обьявляем модули ---- //
+var path = require('path');
+
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
       browserSync = require('browser-sync'),
@@ -16,7 +18,9 @@ const gulp = require('gulp'),
       notify = require('gulp-notify'),
       cache = require('gulp-cache'),
       eslint = require('gulp-eslint'),
-      minifyJS = require('gulp-minify')
+      minifyJS = require('gulp-minify'),
+      sourcemaps = require('gulp-sourcemaps');
+
 
 const params = {
   proxy: 'localproxy.dev', // Если работа ведется с использованием сервера и php
@@ -81,7 +85,9 @@ gulp.task('js-myLibs', function () {
     return gulp.src([
         'src/assets/scripts/myLibs/*.js'
     ])
+        .pipe(sourcemaps.init())
         .pipe(concat('myLibs.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('src/assets/scripts/common/'))
 })
 
@@ -93,7 +99,9 @@ gulp.task('js-components', function () {
     return gulp.src([
         'src/views/components/**/*.js'
     ])
+        .pipe(sourcemaps.init())
         .pipe(concat('components.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('src/assets/scripts/common/'))
 })
 
@@ -106,7 +114,9 @@ gulp.task('js-sections', function () {
   return gulp.src([
     'src/views/sections/**/*.js'
   ])
+    .pipe(sourcemaps.init())
     .pipe(concat('sections.js'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('src/assets/scripts/common/'))
 })
 
@@ -122,10 +132,11 @@ gulp.task('dev-js', ['js-libs', 'js-myLibs', 'js-components', 'js-sections'], fu
         'src/assets/scripts/common/sections.js'
     ])
         .pipe(concat('scripts.min.js'))
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(babel({
             presets: ['env']
         }))
-
+        .pipe(sourcemaps.write('.', {sourceRoot: path.join(__dirname)}))
         .pipe(gulp.dest('src/assets/scripts/common/'))
         .pipe(browserSync.reload({ stream: true }))
 })
